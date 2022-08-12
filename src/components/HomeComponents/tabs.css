@@ -1,0 +1,25 @@
+.tabContainer{
+  /* border: 2px solid red; */
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+}
+.tab{
+  flex: 1;
+  text-align: center;
+  border-bottom: 5px solid #fff;
+  cursor: pointer;
+}
+.isActiveTab{
+  border-bottom: 5px solid black;
+  transition: all 0.8s ease;
+
+}
+.content{
+  padding: 10;
+  border: 2px solid black;
+}
+.notActiveContent{
+  display: none;
+}
