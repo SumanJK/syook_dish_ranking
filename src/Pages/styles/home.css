@@ -1,0 +1,20 @@
+.homeContainer{
+  background: url(../../assets//Mesh\ 9.png);
+  object-fit: contain;
+  background-size: 100vw 100vh;
+  background-repeat: repeat;
+  min-height: 100vh;
+  overflow: hidden;
+}
+.siteLogo {
+  height: 4.4rem;
+  margin: 0;
+  padding: 0;
+  border-bottom: 4px solid rgb(83, 83, 83);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  background: linear-gradient(to right,  rgb(255, 6, 81), #ffffff);
+}

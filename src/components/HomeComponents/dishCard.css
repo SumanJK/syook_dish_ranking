@@ -1,0 +1,88 @@
+.dishCard{
+  position:relative;
+  height: 18rem;
+  display: flex;
+  align-items: flex-end;
+  padding: 1.2rem;
+  color: rgb(255, 255, 255);
+  transition: all 0.3s ease;
+  border-radius: 20px;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.341);
+  border: 1px solid white;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.12) 0px 2px 16px 0px;
+}
+.dishCard:hover{
+  transition: all 0.5s ease;
+  background: rgba(255, 255, 255, 0.304);
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+}
+.dishCard:hover .dishDescription{
+  color: rgb(36, 36, 36);
+  transition: all 0.2s ease;
+}
+.dishCard:hover .dishImage{
+  transform: translateY(-35px);
+  transition: all 0.3s ease;
+  filter: brightness(120%)
+}
+.dishImage{
+  position:absolute;
+  top: 2%;
+  left: 0;
+  height: 70%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+  z-index: 10;
+}
+.dishImageWrapper{
+  height: 200px;
+  width: 200px;
+  overflow: hidden;
+  border-radius:12px;
+  border: 1px solid white;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+.dishImage img{
+  height: 100%;
+  z-index: 20;
+}
+.dishDescription{
+  background: rgba(255, 255, 255, 0.233);
+  box-shadow: rgb(204, 219, 232, .4) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.2) -3px -3px 6px 1px inset;
+  backdrop-filter: blur( 16px );
+  border-radius: 14px;
+  border: 1px solid rgb(255, 255, 255);
+  z-index: 100;
+  height: 8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: .10rem .2rem ;
+  transition: all 0.4s ease;
+}
+.dishDescription h4{
+  margin: 0;
+  padding: .2rem 0;
+  color: rgb(35, 35, 35);
+  font-size: 15px;
+}
+.dishDescription p{
+  margin: 0;
+  font-size: 12px;
+  text-overflow: ellipsis;
+  line-height: 1.2rem;
+}
+.dishCount{
+  position: absolute;
+  bottom: -16%;
+  right: -6%;
+  font-size:20px;
+  z-index: 200;
+  color: rgba(255, 255, 255, 0.857);
+}

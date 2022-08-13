@@ -1,25 +1,56 @@
 .tabContainer{
-  /* border: 2px solid red; */
   width: 100%;
   display: flex;
   justify-content: space-between;
-
 }
 .tab{
   flex: 1;
   text-align: center;
-  border-bottom: 5px solid #fff;
+  border-bottom: 4px solid #fff;
   cursor: pointer;
+  transition: all 0.3s ease;
+  color: rgb(57, 57, 57);
+}
+.tab h3{
+  margin: .6rem 0;
 }
 .isActiveTab{
-  border-bottom: 5px solid black;
-  transition: all 0.8s ease;
-
+  border-bottom: 4px solid rgb(16, 16, 16);
+  transition: all 0.4s ease;
+  color: rgba(255, 255, 255, 0.803);
+  background: rgba(38, 38, 38, 0.919);
 }
 .content{
-  padding: 10;
-  border: 2px solid black;
+  padding:0 30px;
+  display: flex;
+  height: 84vh;
 }
 .notActiveContent{
   display: none;
+}
+.dishesContainer{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+ padding: 4rem 2rem;
+ width: 70%;
+ overflow: scroll;
+ overflow-x: hidden;
+}
+.dishesContainer::-webkit-scrollbar-track
+{
+	background-color: #F5F5F5;
+	border-radius: 10px;
+  padding: 0;
+}
+.dishesContainer::-webkit-scrollbar
+{
+	width: 20px;
+	background-color: #F5F5F5;
+}
+.dishesContainer::-webkit-scrollbar-thumb {
+  border: 5px solid transparent;
+  border-radius: 100px;
+  background-image: linear-gradient(to top, #9795f0 0%, #fbc8d4 100%);
+  background-clip: content-box;
 }

@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import DishCard from "./DishCard";
+import PollingSection from "./PollingSection";
 import "./tabs.css";
 const Tabs = () => {
   
@@ -25,13 +26,13 @@ const Tabs = () => {
           className={isActive === 1 ? "tab isActiveTab" : "tab notActiveTab"}
           onClick={()=>setActive(1)}
         >
-          <h3>TAB1</h3>
+          <h3>Dishes</h3>
         </div>
         <div
           className={isActive === 2 ? "tab isActiveTab" : "tab notActiveTab"}
           onClick={()=>setActive(2)}
         >
-          <h3>TAB2</h3>
+          <h3>Ranking</h3>
         </div>
       </div>
       <div className="contentContainer">
@@ -43,10 +44,11 @@ const Tabs = () => {
           }
         >
           <div className="dishesContainer">
-            {dishes?.map((dish)=>{
-              return <DishCard key= {dish?.id} dish={dish}/>
+            {dishes?.map((dish,index)=>{
+              return <DishCard key= {dish?.id} dish={dish} index={index}/>
             })}
           </div>
+          <PollingSection dishes={dishes} />
         </div>
         <div
           className={

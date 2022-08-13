@@ -1,0 +1,135 @@
+.dishPollContainer {
+  width: 25%;
+  height: 38rem;
+  background: rgba(255, 255, 255, 0.291);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-radius: 14px;
+  border: 3px solid rgb(255, 255, 255);
+  position: fixed;
+  right: 0.5%;
+  top: 8.5rem;
+}
+
+/* doodle animations */
+.doodleMelon{
+  height: 5rem;
+  width: 5rem;
+  position: absolute;
+  left: -2%;
+  animation-timing-function: ease-in-out;
+  animation: melon 2.8s  infinite alternate;
+  z-index: 20;
+}
+@keyframes melon{
+  from{
+    transform: rotate(20deg);
+  }
+  to{
+    transform:  translateY(-32px);
+  }
+}
+.doodleBlueBerry{
+  height: 7rem;
+  width: 7rem;
+  position: absolute;
+  right: 0;
+  bottom: 2%;
+  animation-timing-function: ease-in-out;
+  animation: blueBerry 3.5s  infinite alternate;
+  z-index: 100;
+}
+@keyframes blueBerry{
+  from{
+    transform: rotate(-20deg)
+  }
+  to{
+    transform:  translateY(40px);
+  }
+}
+/* . */
+
+.pollHeading h3{
+  margin: 0;
+  padding: 1rem 0;
+  font-size:22px;
+  border-radius: 12px;
+  color: rgb(53, 52, 52);
+  background: linear-gradient(to right, rgb(253, 51, 111), #fff);
+}
+.pollHeading span{
+  color: rgb(237, 2, 72);
+  font-size:28px;
+}
+.arrowAnimation{
+  position: absolute;
+  width: 12%;
+  top: 2%;
+  right: 10%;
+  transform: rotate(50deg);
+  overflow: hidden;
+}
+.pollingContent{
+  padding: 1rem 0;
+  text-align: left;
+}
+.rank{
+  padding: .8rem 1.4rem;
+}
+.rank h4{
+  margin: 0;
+  color: rgb(47, 47, 47);
+}
+.rank span{
+  color: rgb(255, 52, 113);
+  font-size:20px;
+}
+.rank select{
+  border: 1.5px solid black;
+  width: 80%;
+  padding: .2rem 1rem;
+  border-radius:20px;
+  appearance: none;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+}
+.rank select:focus{
+  outline: none;
+}
+.submitRatingButton{
+  display: flex;
+  width: 80%;
+  justify-content: center;
+  padding: 2rem .5rem;
+}
+
+.submitRatingButton button{
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+  color: #000;
+background: linear-gradient(to right, rgb(0, 132, 255), white);
+  border: none;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  height: 2.4rem;
+  width: 45%;
+  border: 1.5px solid white;
+}
+.submitRatingButton button:hover{
+  background: linear-gradient(to right, rgb(255, 0, 115), white);
+  box-shadow: 0px 15px 20px rgba(255, 8, 99, 0.242);
+  color: #fff;
+  letter-spacing: 3px;
+  transform: translateY(-7px);
+}
+.submitRatingButton button:active{
+  transform: translateY(-1px);
+}
