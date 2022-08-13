@@ -1,13 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./styles/login.css";
 import arrow from "../assets/Arrow6.svg";
+import {usersData} from "../data/users" 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from "react-router";
+
 
 const Login = () => {
+
+  const navigate= useNavigate()
 
   const initialState = {username: "", password:"", confirmPassword: ""};
 
   const [formData, setFormData] = useState(initialState);
   const [formError, setFormError] = useState({});
+  const [submit, setSubmit] = useState(false)
 
   const handleChange=(e)=>{
     const {name, value} = e.target;
@@ -17,9 +25,50 @@ const Login = () => {
 const handleSubmit=(e)=>{
 
   e.preventDefault();
-  setFormError(validateForm(formData));
-
+  setFormError(validateForm(formData))
+  setSubmit(true)
 }
+
+
+useEffect(()=>{
+
+  if(Object.keys(formError).length === 0 && submit){
+    
+    const checkUser= usersData.find((user) => (user.username === formData.username && user.password === formData.password))
+    console.log(checkUser,"chek")
+    if(!checkUser){
+      toast("Invalid username or password!",{
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        type:"error",
+        theme:"colored"
+        });
+      setSubmit(false)
+    }else{
+      toast('Login Successful',{
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        type:"success",
+        theme:"colored"
+        })
+        setTimeout(()=>{
+          
+          navigate('/',{replace:true})
+        },3000)
+    }
+  }
+
+},[formError,submit]);
 
 const validateForm = (formValue)=>{
 
@@ -68,6 +117,7 @@ const validateForm = (formValue)=>{
             <div className="loginButtonDiv">
               <input className="loginButton" type="submit" value="Login" />
             </div>
+            <ToastContainer />
           </form>
         </div>
         <div className="loginImage">

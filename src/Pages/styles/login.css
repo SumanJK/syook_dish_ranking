@@ -55,7 +55,7 @@
 .loginButtonDiv{
   display: flex;
   justify-content:center;
-  padding: 3rem 0;
+  padding: 2rem 0;
 }
 .loginButton{
   width: 50%;
