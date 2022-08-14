@@ -173,7 +173,7 @@ console.log(pollRank)
         <div className="submitRatingButton">
           <button onClick={handleSubmit}>submit</button>
         </div>
-        <ToastContainer />
+        {/* <ToastContainer /> */}
       </div>
     </div>
   );

@@ -64,7 +64,7 @@ useEffect(()=>{
         })
         setTimeout(()=>{
           
-          navigate('/',{replace:true})
+          navigate('/home',{replace:true})
 
         },3000)
     }

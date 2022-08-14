@@ -155,14 +155,15 @@
   opacity: 1;
   transition: all 0.3s ease;
   background: #000;
+  border: 2px solid #fff;
   padding: .2rem .6rem;
   border-radius:18px;
 }
 .noRankAvail{
   display: flex;
   flex-direction: column;
-  border: 3px solid rgb(255, 255, 255);
   width: 100%;
+  height: 84vh;
   backdrop-filter: blur(38px);
 }
 .noRankAvail h2{
