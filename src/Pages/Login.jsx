@@ -17,18 +17,19 @@ const Login = () => {
   const [formError, setFormError] = useState({});
   const [submit, setSubmit] = useState(false)
 
+//handle input
   const handleChange=(e)=>{
     const {name, value} = e.target;
     setFormData({...formData, [name]:value});
   }
 
+//handle submit
 const handleSubmit=(e)=>{
 
   e.preventDefault();
   setFormError(validateForm(formData))
   setSubmit(true)
 }
-
 
 useEffect(()=>{
 
@@ -64,12 +65,14 @@ useEffect(()=>{
         setTimeout(()=>{
           
           navigate('/',{replace:true})
+
         },3000)
     }
   }
 
 },[formError,submit]);
 
+//validate formData
 const validateForm = (formValue)=>{
 
   const error={};

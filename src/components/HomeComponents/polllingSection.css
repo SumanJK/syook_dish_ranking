@@ -9,7 +9,7 @@
   border: 3px solid rgb(255, 255, 255);
   position: fixed;
   right: 0.5%;
-  top: 8.5rem;
+  top: 9rem;
 }
 
 /* doodle animations */
@@ -71,11 +71,12 @@
   overflow: hidden;
 }
 .pollingContent{
-  padding: 1rem 0;
+  padding: 1.5rem 0;
   text-align: left;
 }
 .rank{
-  padding: .8rem 1.4rem;
+  padding: .6rem 1.4rem;
+  height: 4rem;
 }
 .rank h4{
   margin: 0;
@@ -132,4 +133,9 @@ background: linear-gradient(to right, rgb(0, 132, 255), white);
 }
 .submitRatingButton button:active{
   transform: translateY(-1px);
+}
+.pollError{
+  color: rgb(255, 255, 255);
+  margin: 0;
+  font-size: 12px;
 }

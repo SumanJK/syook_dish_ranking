@@ -1,7 +1,7 @@
 import React from "react";
 import "./dishCard.css";
 const DishCard = ({ dish,index }) => {
-  console.log(dish, "dishes");
+
 
   return (
     <div className="dishCard">
