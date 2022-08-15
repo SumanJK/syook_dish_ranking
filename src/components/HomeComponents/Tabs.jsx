@@ -17,6 +17,7 @@ const Tabs = () => {
       method: "GET",
       url:"https://raw.githubusercontent.com/syook/react-dishpoll/main/db.json"
     }).then((res) =>{
+
       setDishes(res?.data)
     })
   },[])
