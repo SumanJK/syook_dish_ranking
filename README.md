@@ -40,6 +40,8 @@ website link: https://syook-ranking-by-sumangiri.netlify.app/
 
 It is a simple assignment by Syook. Could have made the UI better using external library but choosed not to use any. 
 
+The api from which I was fetching data was a bit weird, I was getting same picture for every result and it was changing after every render and there are some dishes with same name but different descriptions. That means they were different. So I stored their keys insted of their name or description. And fetched them from the dish data, while storing the rankings.
+
 
 
 
