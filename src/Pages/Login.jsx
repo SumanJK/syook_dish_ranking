@@ -51,6 +51,7 @@ useEffect(()=>{
         });
       setSubmit(false)
     }else{
+      localStorage.setItem('currentUser', formData.username)
       toast('Login Successful',{
         position: "top-right",
         autoClose: 5000,

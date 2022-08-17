@@ -5,23 +5,35 @@ import doodle2 from "../../assets/asset9.png";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const PollingSection = ({ dishes,pollRank }) => {
-console.log(pollRank)
+const PollingSection = ({ dishes }) => {
 
-  // const pollRank= JSON.parse(sessionStorage.getItem('pollResult'));
 
-  // managing dish states
-  let initialState;
+const [userSelection, setUserSelection]= useState(null);
+const [dishRank, setDishRank] = useState({});
+const username = localStorage.getItem("currentUser");
+const userPollResult = JSON.parse(localStorage.getItem("dishRankArray")) || [];
 
-  if(pollRank){
+useEffect(() => {
+  const userSelect= userPollResult.find((el)=>{ 
+    return (el.name === username)
+  })
+  setUserSelection(userSelect)
 
-     initialState = { rank1: pollRank.rank1, rank2: pollRank.rank2, rank3: pollRank.rank3};
+  if(userSelection){
+
+    setDishRank({ rank1: userSelection?.rank1, rank2: userSelection?.rank2, rank3: +userSelection?.rank3})
   }else{
 
-     initialState = { rank1: '', rank2: '', rank3: ''}
-  }
+    setDishRank({ rank1: '', rank2: '', rank3: ''})
+    }
+},[dishes])
 
-  const [dishRank, setDishRank] = useState(initialState);
+// console.log(userSelection,"sell")
+  // managing dish states
+
+
+
+  // console.log(dishRank,"ranked")
 
   const handleChange = (e) => {
 
@@ -67,8 +79,30 @@ console.log(pollRank)
 
    useEffect(()=>{
 
+     let currentUser= localStorage.getItem('currentUser');
+    let userArray= JSON.parse(localStorage.getItem('dishRankArray')) || []
+    // console.log(currentUser,"currentUser")
+
     if(Object.keys(pollError).length === 0 && submit){
-      sessionStorage.setItem('pollResult',JSON.stringify(dishRank))
+
+     const filteredUser= userArray.find((el)=> { return (el?.name === currentUser) })
+
+      if(filteredUser){
+        filteredUser.rank1= dishRank.rank1
+        filteredUser.rank2= dishRank.rank2
+        filteredUser.rank3= dishRank.rank3
+      }else{
+        let newUser= {
+          name: currentUser,
+          rank1: dishRank.rank1, 
+          rank2: dishRank.rank2, 
+          rank3: dishRank.rank3
+        }
+        userArray.push(newUser);
+        
+      }
+      localStorage.setItem('dishRankArray', JSON.stringify(userArray));
+
       toast("poll result submitted 💭",{
         position: "bottom-right",
         autoClose: 3000,

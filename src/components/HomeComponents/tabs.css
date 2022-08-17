@@ -55,13 +55,22 @@
   background-image: linear-gradient(to top, #9795f0 0%, #fbc8d4 100%);
   background-clip: content-box;
 }
+.selectedDishes{
+  width: 100%;
+  display: flex;
+  padding: 5rem 0rem;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
 .rankAvail{
   width: 100%;
   backdrop-filter: blur(38px);
   color: rgb(33, 33, 33);
+  /* border: 2px solid black; */
 }
 .rankAvail h2{
   width: 100%;
+
 }
 .rankedWrapper{
   width: 100%;
@@ -134,7 +143,7 @@
 }
 .rankingNumber{
   position: absolute;
-  right: -12%;
+  right: -8%;
   bottom: -8%;
   font-size:32px;
   font-weight: 700;
@@ -170,4 +179,13 @@
   padding: 1rem 0;
   font-size: 30px;
   margin: 0;
+}
+.userName{
+
+  margin: 0;
+}
+.userName::first-letter{
+  text-transform: uppercase;
+  color: red;
+  font-size:29px;
 }
